@@ -152,6 +152,9 @@ button:hover {
   overflow: hidden;
   animation: rise 0.28s ease both;
 }
+.card.active {
+  border: 1px solid limegreen;
+}
 @keyframes rise {
   from {
     opacity: 0;
