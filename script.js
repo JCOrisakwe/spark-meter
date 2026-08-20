@@ -53,11 +53,20 @@ async function copyValue(text, btnEl, rowEl) {
   btnEl.classList.add("copied");
   btnEl.innerHTML = checkIcon;
   rowEl.classList.add("copied");
+
   setTimeout(() => {
     btnEl.classList.remove("copied");
     btnEl.innerHTML = copyIcon;
     rowEl.classList.remove("copied");
   }, 1000);
+
+  const card = btnEl.closest(".card");
+  if (!card) return;
+
+  results.querySelectorAll(".card").forEach((card) => {
+    card.classList.remove("active");
+  });
+  card.classList.add("active");
 }
 
 function fieldRow(label, value) {
@@ -141,5 +150,3 @@ RowStart.addEventListener("input", () => {
   firstRow = Number(RowStart.value);
   render();
 });
-
-render();
