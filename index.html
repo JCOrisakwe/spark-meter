@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Record Splitter</title>
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1>Record Splitter</h1>
+        <p class="sub">
+          Paste one or more copied rows below — each on its own line. Every row
+          gets split into the five fields, ready to copy one at a time.
+        </p>
+
+        <select name="location" id="location">
+          <option value="SELECT-A-LOCATION">SELECT A LOCATION</option>
+          <option value="SULE CLUSTER">SULE CLUSTER</option>
+          <option value="OTU-COSTAIN">OTU-COSTAIN</option>
+          <option value="ADEWOLE">ADEWOLE</option>
+          <option value="MILE-13">MILE-13</option>
+        </select>
+
+        <div>
+          <input
+            type="number"
+            id="new-row-start"
+            placeholder="Edit row start..."
+          />
+        </div>
+      </header>
+
+      <div class="panel">
+        <textarea
+          id="raw-input"
+          placeholder="SMRSD-04-00082BEF OKAFOR GIBERT 184&#10;SMRSD_04_00082BD5 C&amp;S COSTAIN 54G"
+        ></textarea>
+        <div class="panel-foot">
+          <span id="count">0 rows parsed</span>
+          <button class="ghost" id="clear-btn">CLEAR</button>
+        </div>
+      </div>
+
+      <div id="results">
+        <div class="empty" id="empty-state">— waiting for input —</div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
